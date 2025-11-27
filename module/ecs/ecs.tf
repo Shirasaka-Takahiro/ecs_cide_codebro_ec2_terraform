@@ -40,7 +40,7 @@ resource "aws_ecs_service" "service" {
 
   load_balancer {
     target_group_arn = var.blue_tg_arn
-    container_name   = "${var.general_config["project"]}-${var.general_config["env"]}-${var.task_role}"
+    container_name   = "${var.general_config["project"]}-${var.general_config["env"]}-${var.task_role}-container"
     container_port   = "80"
   }
 
@@ -54,5 +54,6 @@ resource "aws_ecs_service" "service" {
 
   deployment_controller {
     type = "CODE_DEPLOY"
+    #type = "ECS"
   }
 }

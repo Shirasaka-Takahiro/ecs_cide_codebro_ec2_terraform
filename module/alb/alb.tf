@@ -18,7 +18,7 @@ resource "aws_lb" "alb" {
 ##Target Group Blue
 resource "aws_lb_target_group" "blue_tg" {
   name             = "${var.general_config["project"]}-${var.general_config["env"]}-blue-tg"
-  target_type      = "instance"
+  target_type      = "ip"
   protocol_version = "HTTP1"
   port             = "80"
   protocol         = "HTTP"
@@ -43,7 +43,7 @@ resource "aws_lb_target_group" "blue_tg" {
 ##Target Group Green
 resource "aws_lb_target_group" "green_tg" {
   name             = "${var.general_config["project"]}-${var.general_config["env"]}-green-tg"
-  target_type      = "instance"
+  target_type      = "ip"
   protocol_version = "HTTP1"
   port             = "80"
   protocol         = "HTTP"

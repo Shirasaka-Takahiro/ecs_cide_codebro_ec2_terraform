@@ -124,7 +124,7 @@ variable "ec2_count" {
 variable "instance_type" {
   description = "Instance type of EC2"
   type        = string
-  default     = "t3.medium"
+  default     = "t3.xlarge"
 }
 
 variable "volume_type" {
